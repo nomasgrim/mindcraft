@@ -34,6 +34,7 @@
       transit: 'vendor/jquery.transit',
       touchSwipe: 'vendor/jquery.touchSwipe',
       backbone: 'vendor/backbone',
+      threejs: 'vendor/three.min',
       // imagesLoaded: 'vendor/imagesLoaded.pkgd',
     };
   }
@@ -55,6 +56,9 @@
     backbone: {
       deps: ['jquerymigrate','underscore'],
       exports: 'Backbone'
+    },
+    threejs: {
+      exports: 'THREE'
     },
     touchSwipe: {
       deps: ['jquerymigrate'],

@@ -36,6 +36,7 @@
         "domReady": "vendor/requirejs-domready",
         "es5": "vendor/es5-shim.min",
         "json3": "vendor/json3.min",
+        "threejs": "vendor/three.min",
         "underscore": "vendor/lodash.underscore.min",
         "backbone": "vendor/backbone",
         "jade": "vendor/jade.runtime"
