@@ -1,0 +1,11 @@
+extends ../templates/main.jade
+
+block mainContent
+
+  #home-container
+  #about-container
+
+  script#home-template(type='text/html')
+    include ../includes/pages/home.jade
+  script#about-template(type='text/html')
+    include ../includes/pages/about.jade

@@ -1,0 +1,8 @@
+{
+  "options": {
+    "expr": true
+  },
+  "all": {
+    "src": ["*.{js,json}", "<%= paths.src %>/scripts/**/*.{js,json}", "!<%= paths.src %>/scripts/vendor/**", "<%= paths.grunt %>/**/*.{js,json}"]
+  }
+}

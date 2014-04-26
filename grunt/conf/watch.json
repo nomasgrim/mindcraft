@@ -1,0 +1,15 @@
+{
+  "options": {
+  },
+  "livereload": {
+    "options": {"livereload": true},
+    "files": ["./<%= paths.dest %>/**/*"]
+  },
+  "jshint": {
+    "files": "<%= jshint.all.src %>",
+    "tasks": ["newer:jshint:all", "notify:jshint"],
+    "options": {
+      "event": ["added", "changed"]
+    }
+  }
+}

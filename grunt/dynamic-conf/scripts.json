@@ -1,0 +1,115 @@
+{
+  "jade": {
+    "jst": {
+      "options": {
+        "client": true,
+        "amd": true,
+        "namespace": "Templates",
+        "cwd": "<%= paths.src %>/markup/jst/"
+      },
+      "files": [{
+        "expand": true,
+        "cwd": "<%= jade.jst.options.cwd %>",
+        "src": "**/*.jade",
+        "dest": "<%= paths.build %>/scripts/jst/",
+        "ext": ".js"
+      }]
+    }
+  },
+  "requirejs": {
+    "options": {
+      "baseUrl": "<%= paths.project %>/<%= paths.dest %>/scripts/",
+      "destination": "<%= paths.build %>/scripts/",
+      "name": "require-config",
+      "enforceDefine": true,
+      "insertRequire": ["require-config"],
+      "paths": {
+        "facebook": "//connect.facebook.net/en_US/all",
+        "aviary": "//feather.aviary.com/js/feather",
+        "youtube": "//www.youtube.com/iframe_api?noext",
+        "instagram": "vendor/ig",
+        "components": "../../bower_components",
+        "q": "vendor/q",
+        "jquery": "vendor/jquery-1.10.2.min",
+        "jquerymigrate": "vendor/jquery-migrate-1.1.1.min",
+        "jquery.transit": "vendor/jquery.transit-0.9.9.min",
+        "domReady": "vendor/requirejs-domready",
+        "es5": "vendor/es5-shim.min",
+        "json3": "vendor/json3.min",
+        "underscore": "vendor/lodash.underscore.min",
+        "backbone": "vendor/backbone",
+        "jade": "vendor/jade.runtime"
+      },
+      "optimize": "uglify2",
+      "shim": {
+        "jquerymigrate": {
+          "deps": ["jquery"],
+          "exports": "jQuery"
+        },
+        "jquery.transit": {
+          "deps": ["jquery"],
+          "exports": "jQuery"
+        },
+        "backbone": {
+          "deps": ["underscore", "jquery"],
+          "exports": "Backbone"
+        },
+        "aviary": {
+          "exports": "Aviary"
+        }
+      }
+    },
+    "almond": {
+      "options": {
+        "include": ["vendor/require", "home", "winners", "about", "complete-your-profile", "social"],
+        "out": "<%= requirejs.options.destination %>/optimized.pkgd.js"
+      }
+    },
+    "main": {
+      "options": {
+        "include": ["vendor/require"],
+        "out": "<%= requirejs.options.destination %>/main.pkgd.js"
+      }
+    }
+  },
+  "copy": {
+    "vendorScripts": {
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.src %>/scripts/vendor/",
+        "src": "**/*",
+        "dest": "<%= paths.build %>/scripts/vendor/"
+      }]
+    },
+    "devScripts": {
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.src %>/scripts/lib",
+        "src": "**/*.js",
+        "dest": "<%= paths.build %>/scripts/"
+      }]
+    },
+    "scripts": {
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.build %>/scripts/",
+        "src": "**/*",
+        "dest": "<%= paths.dest %>/scripts/"
+      }]
+    }
+  },
+  "clean": {
+    "scripts": ["<%= paths.build %>/scripts"],
+    "genScripts": ["<%= paths.dest %>/scripts/"]
+  },
+  "watch": {
+    "scripts": {
+      "files": [
+        "<%= paths.src %>/scripts/lib/**/*.js",
+        "<%= paths.src %>/scripts/vendor/**/*.js",
+        "<%= paths.src %>/scripts/jade/jst/**/*.jade",
+        "<%= paths.dynamicConfig %>/*scripts*"],
+      "tasks": ["scripts"]
+    }
+  }
+}

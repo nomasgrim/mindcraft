@@ -1,0 +1,5 @@
+include shared-mixins
+
+mixin includeJSON(file)
+  script(type="application/json")&attributes(attributes)
+    != includeJSON(file)

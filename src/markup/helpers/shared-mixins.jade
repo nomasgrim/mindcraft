@@ -1,0 +1,52 @@
+//- http://stackoverflow.com/questions/10709511/express-jade-node-js-variable-is-not-defined-error-when-checking-for-exist
+- function pagevar(key, value) { var undef; return (value===undef) ? locals[key] || null : locals[key] = value; }
+
+//- Hash of relevant paths to use.
+//- paths = pagevar('paths') || {};
+- paths.root = '/fierce';
+//- Allow setting a string id per page.
+- pageId = pagevar('pageId') || '';
+//- Allow setting a string of classes per page.
+- pageClasses = pagevar('pageClasses') || [pageId];
+
+mixin projectLink(url)
+  - var path = url || attributes.href || null;
+  - path = trimLeadingSlash(path);
+  - attributes.href = paths["header"]["home"] + path;
+  a&attributes(attributes)
+    block
+
+mixin projectStyle(file)
+  - var path = file || attributes.href || null;
+  - path = trimLeadingSlash(path);
+  if path
+    - attributes.href = paths["assets"]["styles"] + path;
+    //- console.log('poyStyle: '+attributes.href)
+    - attributes.rel = 'stylesheet'
+    link&attributes(attributes)
+
+//-
+  example code comparison.
+    +fierceStyle
+    => console.error call; no HTML output (still compiles)
+    +fierceStyle()(href="doop")
+    => link(href="doop" rel="stylesheet")
+    +fierceStyle('derp')
+    => link(href="derp" rel="stylesheet")
+    +fierceStyle('derp')(href="doop")
+    => link(href="derp" rel="stylesheet")
+
+mixin projectScript(file)
+  - var path = file || attributes.src || null;
+  - path = trimLeadingSlash(path);
+  if path
+    - attributes.src = paths["assets"]["scripts"] + path;
+    script&attributes(attributes)
+
+mixin projectImage(file)
+  - var path = file || attributes.src || null;
+  - path = trimLeadingSlash(path);
+  if path
+    - attributes.src = paths["assets"]["images"] + path;
+    - attributes.alt = attributes.alt || 'OnePage Image of'
+    img&attributes(attributes)

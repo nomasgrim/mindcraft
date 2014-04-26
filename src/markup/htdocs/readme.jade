@@ -1,0 +1,327 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=yes')
+    title Gatorade Fierce - Bold + Intense
+    style.
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+        font-size: 13px;
+        line-height: 18px;
+        color: #737373;
+        background-color: white;
+        margin: 10px 13px 10px 13px;
+      }
+      table {
+        margin: 10px 0 15px 0;
+        border-collapse: collapse;
+      }
+      td,th { 
+        border: 1px solid #ddd;
+        padding: 3px 10px;
+      }
+      th {
+        padding: 5px 10px;  
+      }
+
+      a {
+        color: #0069d6;
+      }
+      a:hover {
+        color: #0050a3;
+        text-decoration: none;
+      }
+      a img {
+        border: none;
+      }
+      p {
+        margin-bottom: 9px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #404040;
+        line-height: 36px;
+      }
+      h1 {
+        margin-bottom: 18px;
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      h4 {
+        font-size: 16px;
+      }
+      h5 {
+        font-size: 14px;
+      }
+      h6 {
+        font-size: 13px;
+      }
+      hr {
+        margin: 0 0 19px;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+      }
+      blockquote {
+        padding: 13px 13px 21px 15px;
+        margin-bottom: 18px;
+        font-family:georgia,serif;
+        font-style: italic;
+      }
+      blockquote:before {
+        content:"\201C";
+        font-size:40px;
+        margin-left:-10px;
+        font-family:georgia,serif;
+        color:#eee;
+      }
+      blockquote p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 18px;
+        margin-bottom: 0;
+        font-style: italic;
+      }
+      code, pre {
+        font-family: Monaco, Andale Mono, Courier New, monospace;
+      }
+      code {
+        background-color: #fee9cc;
+        color: rgba(0, 0, 0, 0.75);
+        padding: 1px 3px;
+        font-size: 12px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+      pre {
+        display: block;
+        padding: 14px;
+        margin: 0 0 18px;
+        line-height: 16px;
+        font-size: 11px;
+        border: 1px solid #d9d9d9;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      pre code {
+        background-color: #fff;
+        color:#737373;
+        font-size: 11px;
+        padding: 0;
+      }
+      sup {
+        font-size: 0.83em;
+        vertical-align: super;
+        line-height: 0;
+      }
+      * {
+        -webkit-print-color-adjust: exact;
+      }
+      @media screen and (min-width: 914px) {
+        body {
+          width: 854px;
+          margin:10px auto;
+        }
+      }
+      @media print {
+        body,code,pre code,h1,h2,h3,h4,h5,h6 {
+        color: black;
+        }
+        table, pre {
+        page-break-inside: avoid;
+        }
+      }
+  body
+    h1#gatorade-player-of-the-year Gatorade Fierce - Bold + Intense
+    h2#-built-with-grunt-https-cdn-gruntjs-com-builtwith-png-http-gruntjs-com-
+      a(href='http://gruntjs.com/')
+        img(src='https://cdn.gruntjs.com/builtwith.png', alt='Built with Grunt')
+    p
+      | Development effort at&colon;
+      a(href='http://gatorade2.vmldev.com/fierce/') http&colon;&sol;&sol;gatorade2&period;vmldev&period;com&sol;fierce&sol;
+    p
+      | SVN repo at&colon;
+      a(href='https://svn.vmldev.com/repos/gatorade/Gatorade.com/') https&colon;&sol;&sol;svn&period;vmldev&period;com&sol;repos&sol;gatorade&sol;Gatorade&period;com&sol;
+    p
+      | This repo will be kept in sync via a Jenkins build&comma; and represents a static HTML version of the design&period;
+    h2#installation Installation
+    h3#dependencies Dependencies
+    p
+      a(href='http://nodejs.org/') NodeJS
+      | v0&period;10&plus; &lpar;look into
+      a(href='https://github.com/creationix/nvm')
+        code nvm
+      | for keeping up to date&rpar;
+    ul
+      li
+        | Command line utilities&colon;
+        code grunt
+      li
+        | NPM packages&colon;
+        code package&period;json
+      li
+        | Optional dependencies&colon;
+        code node-canvas
+    h4#installing-grunt Installing Grunt
+    p
+      | In a local terminal&comma;
+      code npm install -g grunt-cli
+      | &period; This will install the grunt command line interface globally&period;
+    h4#installing-npm-packages Installing NPM packages
+    p
+      | In project directory&comma; run
+      code npm install
+      | &period; This will install the tasks and helpers for Grunt &amp; the project&comma; including&colon;
+    ul
+      li
+        a(href='http://jade-lang.com') Jade
+        | - HTML templating
+      li
+        a(href='http://learnboost.github.io/stylus/') Stylus
+        | - Logical CSS preprocessor
+      li &mldr;and other helpful web technologies&period;
+    h4#installing-optional-dependencies Installing optional dependencies
+    p
+      a(href='https://github.com/learnboost/node-canvas')
+        code node-canvas
+      | is used by
+      a(href='http://visionmedia.github.io/nib/') Nib
+      | to generate base64 encoded PNGs for use as background images&comma; e&period;g&period; gradients&period; Falls back to CSS3 gradients if not available on development environment&period;
+    h5#mac-osx-installation Mac OSX installation
+    ul
+      li
+        | Install
+        a(href='https://xquartz.macosforge.org/landing/') XQuartz
+        | &period;
+      li
+        | Run
+        code brew update &amp;&amp; brew doctor
+        | to check if your system is up to date&period; &lpar;requires
+        a(href='http://brew.sh/') Homebrew
+        | &rpar;
+      li
+        | Install image processing utils with
+        code brew install giflib libpng jpeg
+      li
+        | Install
+        a(href='http://cairographics.org/') Cairo
+        | with
+        code brew install cairo
+      li
+        | Finally&comma; install
+        code node-canvas
+        | with
+        code npm install canvas
+        | &period; You may need to
+        code export PKG&UnderBar;CONFIG&UnderBar;PATH
+        | as discussed in the
+        a(href='https://github.com/LearnBoost/node-canvas/wiki/Installation---OSX') wiki
+        | after the Cairo step&period;
+    p
+      | The above maze is why
+      code node-canvas
+      | is an optional dependency&period; Once installed&comma; it drastically slows down Stylus compilation time&comma; but can embed a generated image in CSS as a
+      code data-uri
+      | &period;
+    h2#developing Developing
+    p
+      | Once everything is installed&comma; run
+      code grunt
+      | in the project directory&period; This runs the
+      code default
+      | Grunt task&period; It will compile the source code into a working static site&comma; launch a
+      a(href='http://www.senchalabs.org/connect/') connect
+      | HTTP server&comma; open your browser to the launched server&comma; and watch files for changes&period;
+    h3#source-code-compilation Source Code Compilation
+    p
+      | The main purpose of the front-end build system&period; Split into
+      code markup
+      | &comma;
+      code scripts
+      | &comma; and
+      code styles
+      | &comma; these main tasks take the Jade&comma; Stylus&comma; and Javascript source and package it up for the Web&period; By default&comma; builds HTML including concatenated &amp; minified Javacript and CSS&period; With a
+      code grunt --dev
+      | option supplied&comma; it will use unminified source files for debugging&period;
+    p Optionally run with&colon;
+    ul
+      li
+        code grunt markup
+      li
+        code grunt scripts
+      li
+        code grunt styles
+      li
+        code grunt main
+        | - Compiles markup&comma; scripts&comma; and styles in series&period;
+      li
+        code grunt concurrent&colon;main
+        | - Compiles markup&comma; scripts&comma; and styles in parallel&period;
+    h3#http-server HTTP Server
+    p
+      | By default&comma; launches on port 8000&period; Will read
+      code &dollar;PORT
+      | environment variable&period; Opens browser once launched&period; Includes LiveReload client script on served HTML&period;
+    p Optionally run with&colon;
+    ul
+      li
+        code grunt server
+        | - Handy alias&period;
+      li
+        code grunt connect&colon;site&colon;keepalive
+        | - Original task form&period;
+      li
+        code grunt concurrent&colon;server
+        | - Concurrently run server &amp; watchers&period;
+    h3#watchers Watchers
+    p
+      | The following 5 watchers are included in the
+      code default
+      | task &lpar;via
+      code concurrent&colon;server
+      | &rpar;&colon;
+    ul
+      li
+        | If a source file changes&comma; Grunt will recompile the necessary files &lpar;
+        code scripts
+        | &comma;
+        code styles
+        | or
+        code markup
+        | &rpar;&period;
+      li
+        | If a public asset changes while watching and browsing on the
+        code connect
+        | webserver&comma;
+        a(href='http://livereload.com/')
+          code LiveReload
+        | will kick in &lpar;powered by Grunt&semi; no additional software necessary&rpar;&period;
+      li
+        | If a Javascript file changes &lpar;Grunt config or Web script&rpar;&comma; Grunt will run
+        code jshint
+        | on the changed file&period;
+    p
+      | For a full list of available tasks&comma; run
+      code grunt --help
+      | &period;

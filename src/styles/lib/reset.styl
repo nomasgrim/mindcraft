@@ -1,0 +1,100 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Let's get some fonts.
+//
+// End goal: Declare `@font-face`s, as seen in fonts.css
+//
+// First, we're using a hash to juggle pathnames to server webfonts directory.
+// Assumes we have gathered our fonts into a single common, accessible folder,
+// and that each font family has .eot, .woff, .otf, & .svg variants.
+// The variants should share font family filenames (i.e. before the extension).
+//
+// E.g.
+//
+//   /path/to/webfonts/bitstream-vera-sans-mono.eot
+//   /path/to/webfonts/bitstream-vera-sans-mono.woff
+//   /path/to/webfonts/bitstream-vera-sans-mono.otf
+//   /path/to/webfonts/bitstream-vera-sans-mono.svg
+//
+//  So, the `/path/to/webfonts` part is what we really need.
+//  A hash lets us add other paths, both in the hash definition or by assignment.
+//
+// Requires Stylus >= 0.39.0.
+//
+// Stylus hash documentation:
+// http://learnboost.github.io/stylus/docs/hashes.html
+
+// paths = Hash of URL pathnames to reference.
+// No trailing slash here.
+paths = {
+  root: '/mindcraft',
+  font: '/mindcraft/_assets/webfonts'
+}
+
+// fonts = Hash of font family/filename pairs.
+
+// Family name will be used in styles to reference the font.
+// `family` is a key and URL hash fragment slug, & should be camelCasedSingleWord.
+// `filename` is the extensionless base all file types share.
+
+// Note gBlackItalic & ppMediumItalic are different families from gBlack and ppMedium.
+// Simply setting `font-style` on the original family has no effect.
+// Instead, use `font-family` with the names declared here.
+
+fonts = {
+  fontLight: 'fontLight-webfont'
+}
+
+// fontUrl( pattern, file, family)
+// Generates URL based on font directory path (must be declared above).
+// `pattern` used in `s(pattern, args)` Stylus built-in function.
+// http://learnboost.github.io/stylus/docs/bifs.html
+// `paths.font` is passed as first argument after `pattern` to `s()`
+// `file` is passed next
+// `family` is a slug, used as needed by the `pattern`.
+fontUrl( pattern, file, family)
+  url(s(pattern, unquote(paths.font), unquote(file), unquote(family)))
+
+// Helper methods for individual formats.
+// Basically partials of fontUrl.
+// Simple, URL-only `.eot`.
+// url("path/to/webfonts/file.eot")
+eotFontUrl(file, family)
+  fontUrl('%s/%s.eot', file, family)
+
+// url("path/to/webfonts/file.eot?#iefix") format("embedded-opentype")
+eotFont(file, family)
+  fontUrl('%s/%s.eot?#iefix', file, family) format('embedded-opentype')
+
+// url("path/to/webfonts/file.woff") format("woff")
+woffFont(file, family)
+  fontUrl('%s/%s.woff', file, family) format('woff')
+
+// url("path/to/webfonts/file.ttf") format("truetype")
+ttfFont(file, family)
+  fontUrl('%s/%s.ttf', file, family) format('truetype')
+
+// url("path/to/webfonts/file.svg#family") format("svg")
+svgFont(file, family)
+  fontUrl('%s/%s.svg#%s', file, family) format('svg')
+
+// includeFont(family, file)
+// Iterator for our `fonts` hash.
+// Puts it all together and actually declares the font-face.
+includeFont(family, file)
+  @font-face
+    font-family family
+    src eotFontUrl(file, family)
+    src eotFont(file, family), woffFont(file, family), ttfFont(file, family), svgFont(file, family)
+
+    font-weight normal
+    font-style normal
+
+// Iterate over `fonts`, declaring `font-faces` for each family.
+for fontFamily, fontFile in fonts
+  includeFont(fontFamily, fontFile)
+
+// alternatively include target "handcrafted" css
+//@import 'fonts.css'
+
+@import 'reset.css'

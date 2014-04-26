@@ -1,0 +1,45 @@
+{
+  "stylus": {
+    "compile": {
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.src %>/styles/lib",
+        "src": ["**/*.styl", "!**/_*", "!**/_*/**"],
+        "dest": "<%= paths.build %>/styles/",
+        "ext": ".css"
+      }],
+      "options": {
+        "include css": true,
+        "linenos" : true
+      }
+    }
+  },
+  "copy": {
+    "vendorStyles": {
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.src %>/styles/vendor/",
+        "src": "**/*.css",
+        "dest": "<%= paths.build %>/styles/vendor/"
+      }]
+    },
+    "styles": {
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.build %>/styles/",
+        "src": "**/*",
+        "dest": "<%= paths.dest %>/styles/"
+      }]
+    }
+  },
+  "clean": {
+    "styles": ["<%= paths.build %>/styles"],
+    "genStyles": ["<%= paths.dest %>/styles/"]
+  },
+  "watch": {
+    "styles": {
+      "files": ["<%= paths.src %>/styles/**/*.styl", "<%= paths.dynamicConfig %>/*styles*"],
+      "tasks": ["styles"]
+    }
+  }
+}

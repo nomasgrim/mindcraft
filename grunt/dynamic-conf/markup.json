@@ -1,0 +1,42 @@
+{
+  "jade": {
+    "html": {
+      "options": {
+        "pretty": true,
+        "data": {
+          "build": "<%= build %>"
+        }
+      },
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.src %>/markup/htdocs/",
+        "src": "**/*.jade",
+        "dest": "<%= paths.build %>/markup/jade/",
+        "ext": ".html"
+      }]
+    }
+  },
+  "copy": {
+    "markup": {
+      "files": [{
+        "expand": true,
+        "cwd": "<%= paths.build %>/markup/jade/",
+        "src": "**/*.html",
+        "dest": "<%= paths.jadeDest %>/"
+      }]
+    }
+  },
+  "clean": {
+    "markup": ["<%= paths.build %>/markup"],
+    "genMarkup": {
+        "src": ["**/*.html", "!node_modules/**/*"]
+    },
+    "jade": ["<%= paths.build %>/markup/jade"]
+  },
+  "watch": {
+    "markup": {
+      "files": ["<%= paths.src %>/markup/**/*{.jade,.js,.json}", "<%= paths.dynamicConfig %>/*markup*", "!<%= paths.src %>/markup/jst/**/*"],
+      "tasks": ["markup"]
+    }
+  }
+}

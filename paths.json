@@ -1,0 +1,10 @@
+{
+  "dest": "_assets",
+  "jadeDest": ".",
+  "build": "build",
+  "src": "src",
+  "grunt": "grunt",
+  "tasks": "grunt/tasks",
+  "config": "grunt/conf",
+  "dynamicConfig": "grunt/dynamic-conf"
+}

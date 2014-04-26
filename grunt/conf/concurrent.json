@@ -1,0 +1,7 @@
+{
+  "main": "<%= mainTasks %>",
+  "server": {
+    "tasks": ["server", "load-and-watch:markup", "load-and-watch:scripts", "load-and-watch:styles", "watch:livereload", "watch:jshint"],
+    "options": { "logConcurrentOutput": true }
+  }
+}

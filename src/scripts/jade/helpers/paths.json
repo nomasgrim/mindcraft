@@ -1,0 +1,15 @@
+{
+  "header" : {
+    "home"     : "/mindcraft/"
+  },
+  "nav-footer" : {
+  },
+  "footer" : {
+  },
+  "assets" : {
+    "root"    : "/mindcraft/_assets/",
+    "images"  : "/mindcraft/_assets/images/",
+    "styles"  : "/mindcraft/_assets/styles/",
+    "scripts" : "/mindcraft/_assets/scripts/"
+  }
+}

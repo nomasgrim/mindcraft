@@ -1,0 +1,11 @@
+script.
+    window.build = '#{build}';
+
+- if( build === 'dev')
+  +projectScript('vendor/require.js')(data-main='/mindcraft/_assets/scripts/require-config')
+- else if( build === 'prod')
+  +projectScript('main.pkgd.js')
+- else if( build === 'almond')
+  +projectScript('optimized.pkgd.js')
+
++includeJSON('paths')#paths

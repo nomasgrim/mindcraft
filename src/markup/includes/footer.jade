@@ -1,0 +1,22 @@
+#nav-footer
+  .contain
+    ul
+      - each link, name in paths['nav-footer']
+        - var lastLink = (name === 'media') ? 'noborder' : null;
+        li
+          a(href=link, class=lastLink, target="_blank")= name
+
+
+//-
+  footer#footer
+
+  .contain
+    //-
+      #footer-left
+        strong Gatorade
+      //-
+        | &copy; 2013 Gatorade, Inc. All Rights Reserved
+    //-
+      #footer-right
+      a(href=paths.footer.terms) Terms &amp; Conditions
+      a(href=paths.footer.privacy).noborder Privacy Policy

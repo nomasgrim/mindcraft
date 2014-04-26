@@ -1,0 +1,19 @@
+@import _globals
+
+/* main setup */
+html, body
+  width 100%
+  margin 0 auto
+
+.contain
+  //width 1282px
+  margin 0 auto
+  position relative
+
+
+for page in navPages
+  activeNav(page, page)
+
+@import "_pages/home.styl"
+@import "_pages/about.styl"
+@import "mobile.styl"

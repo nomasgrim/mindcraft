@@ -1,0 +1,44 @@
+{
+  "name": "mindcraft",
+  "version": "0.0.0",
+  "description": "Clean One Page App jade/stylus/backbone",
+  "scripts": {
+    "compile-styles": "grunt styles",
+    "compile-scripts": "grunt scripts",
+    "compile-markup": "grunt markup",
+    "compile-and-watch": "grunt",
+    "test": "echo 'someday'"
+  },
+  "author": "",
+  "license": "Copyright 2013-14. All rights reserved.",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "jade": "~1.0.2",
+    "stylus": "~0.41.3",
+    "nib": "~1.0.1",
+    "lodash": "~2.4.1",
+    "underscore.string": "~2.3.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-jade": "~0.9.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-stylus": "~0.12.0",
+    "grunt-contrib-symlink": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-concurrent": "~0.4.2",
+    "grunt-newer": "~0.6.0",
+    "grunt-notify": "~0.2.16",
+    "butchershop": "~0.0.6",
+    "marked": "~0.2.9",
+    "load-grunt-tasks": "~0.2.1",
+    "time-grunt": "~0.2.7"
+  },
+  "optionalDependencies": {
+    "canvas": "~1.1.3"
+  }
+}

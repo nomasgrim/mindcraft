@@ -1,0 +1,10 @@
+{
+  "site": {
+    "options": {
+      "port": "<%= port %>",
+      "base": "..",
+      "open": "http://localhost:<%= port %>/mindcraft/",
+      "livereload": true
+    }
+  }
+}

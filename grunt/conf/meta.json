@@ -1,0 +1,4 @@
+{
+  "name": "<%= pkg.name %>",
+  "banner": "/* <%= pkg.name %> - v<%= pkg.version %> - <%= template.today('m/d/yyyy') %> */"
+}

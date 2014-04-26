@@ -1,0 +1,52 @@
+// Imports. Currently just nib.
+@import nib
+
+paths = {
+  root: '/onepage',
+  images: '/onepage/_assets/images'
+}
+
+imageUrl(image)
+  url(s('%s/%s', unquote(paths.images), unquote(image)))
+
+// Mixins for CSS3 animation keyframes.
+defineRotating()
+  @keyframes rotating
+    from
+      transform rotate(0deg)
+    to
+      transform rotate(360deg)
+
+definePulsing()
+  @keyframes pulsing
+    from
+      opacity .4
+    to
+      opacity 1
+
+// Font Family Stacks
+sansStack           = Helvetica, Arial, sans-serif
+fontLightStack         = fontLight, sansStack
+
+// Set border style
+onePageBorder()
+  border 1px solid gLightGray
+
+
+// Image replacement test
+ir()
+  width = arguments ? arguments[0] : 100%
+  height = arguments && arguments[1] ? arguments[1] : false
+  height = height ? height : width
+
+  direction ltr
+  display block
+  height height
+  overflow hidden
+  text-align left
+  text-indent 100%
+  white-space nowrap
+  width width
+
+.ir
+  ir()
